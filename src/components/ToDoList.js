@@ -29,8 +29,8 @@ function ToDoList() {
         add={() => {handleButtonClick(); createDiv()}}
         handleInputChange={handleInputChange}
       />
-      {divArray.map((item) => {
-        return  <ListItem objective={divValue} id={counter}/>;
+      {divArray.map((item, index) => {
+        return  <ListItem objective={divValue} key={index} id={counter}/>;
       })}
 
       {/* <ListItem objective={divValue}/> */}
