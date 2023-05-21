@@ -2,10 +2,12 @@ import React from 'react'
 
 function ListItem(props) {
   return (
-    <div style={{width:"17rem", minHeight:"4rem", display:"flex", alignItems:"center", justifyContent:"space-between", flexWrap:"wrap"}} id={props.id}>
-        <h1 style={{width:"10rem", minHeight:"4rem", display:"flex", flexWrap:"wrap", fontSize:"2rem"}}>{props.objective}</h1>
+    <div style={{width:"17rem", minHeight:"auto", display:"flex", alignItems:"center", justifyContent:"space-between", flexWrap:"wrap"}} id={props.id}>
+        <div style={{width:"75%",  height:"auto", display:"flex", flexWrap:"wrap", flexDirection:"column", whiteSpace: 'normal'}}>
+        <h1 style={{width:"100%", height:"auto", fontSize:"2rem", whiteSpace: 'normal', textAlign:"left"}}>{props.objective}</h1>
         <p>{props.time} 12</p>
-        <div>
+        </div>
+        <div style={{width:"25%",  height:"100%"}}>
             <button onClick={props.check}>@</button>
             <button onClick={props.delete}>#</button>
         </div>

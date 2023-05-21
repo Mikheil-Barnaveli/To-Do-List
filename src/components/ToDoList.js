@@ -11,29 +11,25 @@ function ToDoList() {
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
-  const handleButtonClick = () => {
-    setDivValue(inputValue);
-  };
 
   function createDiv() {
     let pusher = divArray;
     setDivArray([...pusher, <ListItem objective={divValue} id={counter}/>])
     setCounter(prevState => prevState + 1)
-    console.log(counter);
-    console.log(pusher);
+    setDivValue(inputValue);
 }
 
   return (
     <div>
       <InputListItems
-        add={() => {handleButtonClick(); createDiv()}}
+        add={createDiv}
         handleInputChange={handleInputChange}
       />
+      <ul style={{listStyle:"none"}}>
       {divArray.map((item, index) => {
-        return  <ListItem objective={divValue} key={index} id={counter}/>;
+        return <li key={index}><ListItem objective={divValue} id={counter}/></li>
       })}
-
-      {/* <ListItem objective={divValue}/> */}
+      </ul>
     </div>
   );
 }
