@@ -14,9 +14,13 @@ function ToDoList() {
 
   function createDiv() {
     let pusher = divArray;
+    setDivValue(inputValue);
     setDivArray([...pusher, <ListItem objective={divValue} id={counter}/>])
     setCounter(prevState => prevState + 1)
-    setDivValue(inputValue);
+    if (inputValue.trim() !== "") {
+        setDivArray([...pusher, inputValue]);
+        setInputValue("");
+      }
 }
 
   return (
