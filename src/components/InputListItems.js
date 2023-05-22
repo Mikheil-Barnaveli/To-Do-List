@@ -4,6 +4,7 @@ function InputListItems(props) {
   return (
     <div
       style={{
+        width:"100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -13,12 +14,12 @@ function InputListItems(props) {
         type="text"
         value={props.value}
         onChange={(e) => props.handleInputChange(e)}
-        style={{ width: "clamp(275px, 100%, 500px)", minHeight: "2rem", fontSize: "1.5rem" }}
+        style={{ width: "90%", minHeight: "2rem", fontSize: "1.5rem" }}
         id="input-list-item"
       ></input>
       <button
         htmlFor="input-list-item"
-        style={{ width: "2rem", minHeight: "2rem", fontSize: "1rem" }}
+        style={{ width: "10%", minHeight: "2rem", fontSize: "1rem" }}
         onClick={props.add}
       >
         Add

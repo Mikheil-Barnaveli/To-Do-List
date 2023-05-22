@@ -1,11 +1,10 @@
 import React from "react";
 
 function ListItem(props) {
-  console.log(props);
   return (
     <div
       style={{
-        width: "17rem",
+        width: "360px",
         minHeight: "auto",
         display: "flex",
         alignItems: "center",
@@ -16,7 +15,7 @@ function ListItem(props) {
     >
       <div
         style={{
-          width: "75%",
+          width: "80%",
           height: "auto",
           display: "flex",
           flexWrap: "wrap",
@@ -38,9 +37,10 @@ function ListItem(props) {
         </h1>
         <p>{props.time}</p>
       </div>
-      <div style={{ width: "25%", height: "100%" }}>
-        <button onClick={props.check}>@</button>
-        <button onClick={props.delete}>#</button>
+      <div style={{ width: "20%", height: "100%", display:'flex', alignItems: "center",
+        justifyContent: "center"}}>
+        <input type="checkbox" checked={props.isChecked} onClick={props.handleCheckboxClick} style={{width:"50%", height:'2rem'}}></input>
+        <button onClick={props.delete} style={{width:"50%", height:'2rem'}}>#</button>
       </div>
     </div>
   );
