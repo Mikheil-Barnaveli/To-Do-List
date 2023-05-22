@@ -21,19 +21,15 @@ function ToDoList() {
         setChecked(!checked)
       }
     }
-    function deleteItem() {
-    setDivArray(
-      divArray.filter(divArray =>
-        divArray.id !== divArray.id
-        )
-      )
+    function deleteItem(id) {
+      setDivArray((prevDivArray) => prevDivArray.filter((item) => item.props.id !== id));
   }
 
   function createDiv() {
     let pusher = divArray;
     setTime(new Date().toLocaleTimeString())
     setCounter(prevState => prevState + 1)
-    setDivArray([...pusher, <ListItem objective={inputValue} time={time} handleCheckboxClick={handleCheckboxClick} checked={checked} delete={deleteItem} id={counter}/> ])
+    setDivArray([...pusher, <ListItem objective={inputValue} time={time} handleCheckboxClick={handleCheckboxClick} checked={checked} delete={() => deleteItem(counter)} id={counter}/> ])
 }
   
 
