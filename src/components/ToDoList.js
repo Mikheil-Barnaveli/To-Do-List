@@ -17,10 +17,7 @@ function ToDoList() {
     setDivValue(inputValue);
     setDivArray([...pusher, <ListItem objective={divValue} id={counter}/>])
     setCounter(prevState => prevState + 1)
-    if (inputValue.trim() !== "") {
-        setDivArray([...pusher, inputValue]);
-        setInputValue("");
-      }
+    console.log(divArray);
 }
 
   return (
@@ -30,8 +27,8 @@ function ToDoList() {
         handleInputChange={handleInputChange}
       />
       <ul style={{listStyle:"none"}}>
-      {divArray.map((item, index) => {
-        return <li key={index}><ListItem objective={divValue} id={counter}/></li>
+      {divArray.map((item) => {
+        return <li key={counter}><ListItem objective={divValue} id={counter}/></li>
       })}
       </ul>
     </div>
