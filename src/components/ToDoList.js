@@ -4,9 +4,8 @@ import ListItem from "./ListItem";
 
 function ToDoList() {
   const [inputValue, setInputValue] = useState("");
-  const [divValue, setDivValue] = useState("");
   const [divArray, setDivArray] = useState([]);
-  const [counter, setCounter] = useState(0);
+  const [time, setTime] = useState(new Date().toLocaleTimeString())
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -14,9 +13,8 @@ function ToDoList() {
 
   function createDiv() {
     let pusher = divArray;
-    setDivValue(inputValue);
-    setDivArray([...pusher, <ListItem objective={divValue} id={counter}/>])
-    setCounter(prevState => prevState + 1)
+    setTime(new Date().toLocaleTimeString())
+    setDivArray([...pusher, <ListItem objective={inputValue} time={time}/>])
     console.log(divArray);
 }
 
@@ -27,8 +25,9 @@ function ToDoList() {
         handleInputChange={handleInputChange}
       />
       <ul style={{listStyle:"none"}}>
-      {divArray.map((item) => {
-        return <li key={counter}><ListItem objective={divValue} id={counter}/></li>
+      {divArray.map((item, index) => {
+        return <li key={index} >{item}</li>
+        
       })}
       </ul>
     </div>
