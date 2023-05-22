@@ -7,6 +7,7 @@ function ToDoList() {
   const [divArray, setDivArray] = useState([]);
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   const [checked, setChecked] = useState(false)
+  const [counter, setCounter] = useState(1)
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -20,19 +21,21 @@ function ToDoList() {
         setChecked(!checked)
       }
     }
+    function deleteItem() {
+    setDivArray(
+      divArray.filter(divArray =>
+        divArray.id !== divArray.id
+        )
+      )
+  }
 
   function createDiv() {
     let pusher = divArray;
     setTime(new Date().toLocaleTimeString())
-    setDivArray([...pusher, <ListItem objective={inputValue} time={time} handleCheckboxClick={handleCheckboxClick} checked={checked} delete={deleteItem}/> ])
+    setCounter(prevState => prevState + 1)
+    setDivArray([...pusher, <ListItem objective={inputValue} time={time} handleCheckboxClick={handleCheckboxClick} checked={checked} delete={deleteItem} id={counter}/> ])
 }
-  function deleteItem() {
-    setDivArray(
-      divArray.filter(a =>
-          a.id !== divArray.id
-        )
-      )
-  }
+  
 
 
   return (
@@ -51,8 +54,8 @@ function ToDoList() {
         handleInputChange={handleInputChange}
       />
       <ul style={{listStyle:"none"}}>
-      {divArray.map((item, index) => {
-        return <li key={index} >{item}</li>
+      {divArray.map((items, index) => {
+        return <li key={index} >{items}</li>
         
       })}
       </ul>
