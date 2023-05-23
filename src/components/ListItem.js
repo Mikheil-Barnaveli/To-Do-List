@@ -4,7 +4,7 @@ function ListItem(props) {
   return (
     <div
       style={{
-        width: "360px",
+        width: "100%",
         minHeight: "auto",
         display: "flex",
         alignItems: "center",
