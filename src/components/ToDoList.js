@@ -36,7 +36,8 @@ function ToDoList() {
 
   return (
     <div style={{
-      width: "clamp(320px, 100%, 640px)",
+      // width: "clamp(320px, 100%, 640px)",
+      width: 'Min(320px, 100%)',
       minHeight: "auto",
       display: "flex",
       flexDirection:"column",

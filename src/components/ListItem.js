@@ -30,7 +30,7 @@ function ListItem(props) {
             fontSize: "2rem",
             whiteSpace: "normal",
             textAlign: "left",
-            wordWrap:'break-word'
+            wordWrap:'break-word',
           }}
         >
           {props.objective}
