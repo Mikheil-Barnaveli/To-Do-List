@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import InputListItems from "./InputListItems";
 import ListItem from "./ListItem";
 import PictureDiv from "./PictureDiv";
-// import "./pics/daytime.jpg"
+import bgPic from "./pics/daytime.jpg"
 
 function ToDoList() {
   const [inputValue, setInputValue] = useState("");
@@ -61,7 +61,7 @@ function ToDoList() {
         padding: "10px",
       }}
     >
-      <PictureDiv time={time}/>
+      <PictureDiv time={time} bg={bgPic}/>
       <InputListItems add={createDiv} handleInputChange={handleInputChange} />
       <ul
         style={{
