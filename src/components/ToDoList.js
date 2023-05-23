@@ -10,11 +10,17 @@ function ToDoList() {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   const [checked, setChecked] = useState(false);
   const [counter, setCounter] = useState(1);
-  // const [pic, setPic] = useState("./pics/daytime.jpg")
+  const currentDate = new Date();
+  const month = currentDate.toLocaleString("default", { month: "long" });
+  const day = currentDate.getDate();
+  const [data, setData] = useState(localStorage.getItem('myData') || '');
   
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
+    const newData = event.target.value;
+    setData(newData);
+    localStorage.setItem('myData', newData);
   };
 
   function handleCheckboxClick() {
@@ -61,7 +67,7 @@ function ToDoList() {
         padding: "10px",
       }}
     >
-      <PictureDiv time={time} bg={bgPic}/>
+      <PictureDiv day={day} month={month} bg={bgPic}/>
       <InputListItems add={createDiv} handleInputChange={handleInputChange} />
       <ul
         style={{
