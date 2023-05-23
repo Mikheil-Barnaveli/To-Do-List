@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import InputListItems from "./InputListItems";
 import ListItem from "./ListItem";
+import PictureDiv from "./PictureDiv";
+// import "./pics/daytime.jpg"
 
 function ToDoList() {
   const [inputValue, setInputValue] = useState("");
@@ -8,6 +10,8 @@ function ToDoList() {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   const [checked, setChecked] = useState(false);
   const [counter, setCounter] = useState(1);
+  // const [pic, setPic] = useState("./pics/daytime.jpg")
+  
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -57,6 +61,7 @@ function ToDoList() {
         padding: "10px",
       }}
     >
+      <PictureDiv time={time}/>
       <InputListItems add={createDiv} handleInputChange={handleInputChange} />
       <ul
         style={{
