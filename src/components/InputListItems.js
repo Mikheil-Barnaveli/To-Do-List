@@ -15,7 +15,7 @@ function InputListItems(props) {
         type="text"
         value={props.value}
         onChange={(e) => props.handleInputChange(e)}
-        style={{ width: "90%", minHeight: "2rem", fontSize: "1.5rem", border:"2px solid skyblue"}}
+        style={{ width: "90%", minHeight: "2rem", fontSize: "1.5rem", border:"2px solid #4169E1"}}
         id="input-list-item"
       ></input>
       <button
@@ -23,7 +23,7 @@ function InputListItems(props) {
         onClick={props.add}
         id="add-button"
       >
-        Add
+       +
       </button>
     </div>
   );

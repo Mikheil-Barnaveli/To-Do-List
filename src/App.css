@@ -22,17 +22,34 @@ body{
   width: 10%;
   min-height: 2rem;
   font-size: 1rem;
-  background-color:skyblue;
+  background-color:#4169E1;
   color:white;
   border:none;
   font-weight: bold;
-  border-left: none;
+  font-size: 1.5rem;
 }
 #add-button:hover{
   cursor: pointer;
   background-color: white;
-  color: skyblue;
+  color: #4169E1;
   font-weight: bold;
-  border: 2px solid skyblue;
+  border: 2px solid #4169E1;
   border-left: none;
+}
+#delete-button{
+  width: 50%;
+  height: 2rem;
+  background-color:#4169E1;
+  color:white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  border:none;
+}
+#delete-button:hover{
+  cursor: pointer;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border: 2px solid red;
 }

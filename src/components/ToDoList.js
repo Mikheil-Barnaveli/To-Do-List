@@ -22,7 +22,7 @@ function ToDoList() {
   };
 
   function handleCheckboxClick() {
-    setChecked((prevChecked) => !prevChecked);y
+    setChecked((prevChecked) => !prevChecked);
   }
   function deleteItem(id) {
     setDivArray((prevDivArray) =>
@@ -65,7 +65,7 @@ function ToDoList() {
         borderRadius: "12px",
       }}
     >
-      <PictureDiv day={day} month={month} bg={bgPic} />
+      <PictureDiv day={day} month={month} bg={bgPic} time={time}/>
       <InputListItems add={createDiv} handleInputChange={handleInputChange} />
       <ul
         style={{

@@ -40,7 +40,7 @@ function ListItem(props) {
       <div style={{ width: "20%", height: "100%", display:'flex', alignItems: "center",
         justifyContent: "center"}}>
         <input type="checkbox" checked={props.isChecked} onClick={props.handleCheckboxClick} style={{width:"50%", height:'2rem'}}></input>
-        <button onClick={props.delete} style={{width:"50%", height:'2rem'}}>#</button>
+        <button onClick={props.delete} id="delete-button">X</button>
       </div>
     </div>
   );
