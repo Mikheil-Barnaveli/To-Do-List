@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import InputListItems from "./InputListItems";
 import ListItem from "./ListItem";
 import PictureDiv from "./PictureDiv";
-import bgPic from "./pics/daytime.jpg"
+import bgPic from "./pics/daytime.jpg";
+import { v4 as uuidv4 } from 'uuid';
 
 function ToDoList() {
   const [inputValue, setInputValue] = useState("");
@@ -13,22 +14,14 @@ function ToDoList() {
   const currentDate = new Date();
   const month = currentDate.toLocaleString("default", { month: "long" });
   const day = currentDate.getDate();
-  const [data, setData] = useState(localStorage.getItem('myData') || '');
   
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
-    const newData = event.target.value;
-    setData(newData);
-    localStorage.setItem('myData', newData);
   };
 
   function handleCheckboxClick() {
-    if (checked == false) {
-      setChecked(!checked);
-    } else if (checked == true) {
-      setChecked(!checked);
-    }
+    setChecked((prevChecked) => !prevChecked);
   }
   function deleteItem(id) {
     setDivArray((prevDivArray) =>
@@ -43,6 +36,7 @@ function ToDoList() {
     setDivArray([
       ...pusher,
       <ListItem
+        key={uuidv4()}
         objective={inputValue}
         time={time}
         handleCheckboxClick={handleCheckboxClick}
@@ -51,6 +45,7 @@ function ToDoList() {
         id={counter}
       />,
     ]);
+    console.log();
   }
 
   return (
@@ -79,7 +74,7 @@ function ToDoList() {
           justifyContent: "center",
         }}
       >
-        {divArray.map((items, index) => {
+        {divArray.map((items) => {
           return (
             <li
               style={{
@@ -88,7 +83,7 @@ function ToDoList() {
                 alignItems: "center",
                 justifyContent: "center",
               }}
-              key={index}
+              key={items.key}
             >
               {items}
             </li>
