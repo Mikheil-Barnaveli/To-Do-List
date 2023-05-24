@@ -35,7 +35,7 @@ function ListItem(props) {
         >
           {props.objective}
         </h1>
-        <p>{props.time}</p>
+        <p>Today at {props.time}</p>
       </div>
       <div style={{ width: "20%", height: "100%", display:'flex', alignItems: "center",
         justifyContent: "center"}}>

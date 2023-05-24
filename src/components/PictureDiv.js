@@ -15,7 +15,9 @@ function PictureDiv(props) {
         backgroundRepeat:"no-repeat",
         backgroundSize:"cover", 
         backgroundPosition:"center",
-        padding:"1rem"
+        padding:"1rem",
+        borderTopLeftRadius:'12px',
+        borderTopRightRadius:'12px'
       }}
     >
     <h1 style={{color:"black"}}>{props.day} {props.month}</h1>

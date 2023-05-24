@@ -8,7 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 function ToDoList() {
   const [inputValue, setInputValue] = useState("");
   const [divArray, setDivArray] = useState([]);
-  const [time, setTime] = useState(new Date().toLocaleTimeString());
+  const [time, setTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
   const [checked, setChecked] = useState(false);
   const [counter, setCounter] = useState(1);
   const currentDate = new Date();
@@ -31,7 +31,7 @@ function ToDoList() {
 
   function createDiv() {
     let pusher = divArray;
-    setTime(new Date().toLocaleTimeString());
+    setTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
     setCounter((prevState) => prevState + 1);
     setDivArray([
       ...pusher,
@@ -59,7 +59,7 @@ function ToDoList() {
         alignItems: "center",
         justifyContent: "space-between",
         flexWrap: "wrap",
-        paddingBlock: "10px",
+        paddingBottom: "10px",
         backgroundColor:'white',
         borderRadius:'12px'
       }}
@@ -74,6 +74,7 @@ function ToDoList() {
           flexDirection:'column',
           alignItems: "center",
           justifyContent: "center",
+          padding:'10px'
         }}
       >
         {divArray.map((items) => {
