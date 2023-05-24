@@ -3,18 +3,19 @@ import InputListItems from "./InputListItems";
 import ListItem from "./ListItem";
 import PictureDiv from "./PictureDiv";
 import bgPic from "./pics/daytime.jpg";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 function ToDoList() {
   const [inputValue, setInputValue] = useState("");
   const [divArray, setDivArray] = useState([]);
-  const [time, setTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+  const [time, setTime] = useState(
+    new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+  );
   const [checked, setChecked] = useState(false);
   const [counter, setCounter] = useState(1);
   const currentDate = new Date();
   const month = currentDate.toLocaleString("default", { month: "long" });
   const day = currentDate.getDate();
-  
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -31,7 +32,9 @@ function ToDoList() {
 
   function createDiv() {
     let pusher = divArray;
-    setTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+    setTime(
+      new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+    );
     setCounter((prevState) => prevState + 1);
     setDivArray([
       ...pusher,
@@ -45,14 +48,12 @@ function ToDoList() {
         id={counter}
       />,
     ]);
-    console.log();
   }
 
   return (
     <div
       style={{
         width: "clamp(320px, 100%, 1040px)",
-        // width: 'Min(320px, 100%)',
         minHeight: "auto",
         display: "flex",
         flexDirection: "column",
@@ -60,21 +61,21 @@ function ToDoList() {
         justifyContent: "space-between",
         flexWrap: "wrap",
         paddingBottom: "10px",
-        backgroundColor:'white',
-        borderRadius:'12px'
+        backgroundColor: "white",
+        borderRadius: "12px",
       }}
     >
-      <PictureDiv day={day} month={month} bg={bgPic}/>
+      <PictureDiv day={day} month={month} bg={bgPic} />
       <InputListItems add={createDiv} handleInputChange={handleInputChange} />
       <ul
         style={{
           listStyle: "none",
           width: "100%",
           display: "flex",
-          flexDirection:'column',
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          padding:'10px'
+          padding: "10px",
         }}
       >
         {divArray.map((items) => {
