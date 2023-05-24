@@ -59,7 +59,9 @@ function ToDoList() {
         alignItems: "center",
         justifyContent: "space-between",
         flexWrap: "wrap",
-        padding: "10px",
+        paddingBlock: "10px",
+        backgroundColor:'white',
+        borderRadius:'12px'
       }}
     >
       <PictureDiv day={day} month={month} bg={bgPic}/>

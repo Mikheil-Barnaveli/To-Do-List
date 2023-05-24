@@ -9,6 +9,7 @@ body{
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  background-color: #EEEEEE;
 }
 #root{
   width: 100%;
