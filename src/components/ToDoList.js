@@ -22,7 +22,7 @@ function ToDoList() {
   };
 
   function handleCheckboxClick() {
-    setChecked((prevChecked) => !prevChecked);
+    setChecked((prevChecked) => !prevChecked);y
   }
   function deleteItem(id) {
     setDivArray((prevDivArray) =>

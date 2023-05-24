@@ -15,13 +15,13 @@ function InputListItems(props) {
         type="text"
         value={props.value}
         onChange={(e) => props.handleInputChange(e)}
-        style={{ width: "90%", minHeight: "2rem", fontSize: "1.5rem" }}
+        style={{ width: "90%", minHeight: "2rem", fontSize: "1.5rem", border:"2px solid skyblue"}}
         id="input-list-item"
       ></input>
       <button
         htmlFor="input-list-item"
-        style={{ width: "10%", minHeight: "2rem", fontSize: "1rem" }}
         onClick={props.add}
+        id="add-button"
       >
         Add
       </button>
